@@ -1,4 +1,4 @@
-table {
+/* table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
@@ -39,4 +39,4 @@ table {
   
   tbody tr:nth-child(even) {
     background-color: #c7c1c7;
-  }
+  } */

@@ -1,23 +1,37 @@
 
-<table>
-    <thead>
-        <tr><th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Actions</th>
-        </tr>        
-    </thead>
-    <tbody>
-        <tr *ngFor="let student of students.students"> 
-            <td>{{ student.firstName }}</td>
-            <td>{{ student.lastName }}</td>
-            <td>{{ student.email }}</td>
-            <td>
-                <button  class = "btn" (click)="onView(student)">View</button>
-                <button class = "btn" (click)="onUpdate(student)">Update</button>
-                <button  class = "btn" (click)="onDelete($event, student.id)">Delete</button>
-            </td>         
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class = "col-2">
+
+    </div>
+    <div class = "col-8">
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr *ngFor="let student of students.students">
+                <th scope="row">{{ student.firstName }}</th>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.email }}</td>
+                <td>
+                    <button  class = "btn btn-outline-primary m-2 btn-sm" (click)="onView(student)">View</button>
+                    <button  class = "btn btn-outline-primary m-2 btn-sm" (click)="onUpdate(student)">Update</button>
+                    <button  class = "btn btn-outline-primary m-2 btn-sm" (click)="onDelete($event, student.id)">Delete</button>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+    <div class = "col-2">
+
+    </div>
+
+</div>
+
 

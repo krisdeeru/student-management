@@ -1,21 +1,28 @@
 <div class= "studentSaveForm">
     <h3>Add New Student</h3>
-    <form #studentForm="ngForm" (ngSubmit) = "onSubmit(studentForm)">
-        <br>
-        <label class = "labelStyle" for="fname">First name:</label>
-        <input class = "inputStyle"  required #fname="ngModel"   type="text" id="fname" name="firstName" value="" ngModel><br>
-        <div *ngIf="fname.touched && fname.invalid" class = "alert">First Name is required</div>
-
-        <label class = "labelStyle" for="lname">Last name:</label>
-        <input class = "inputStyle"  required #lname="ngModel" type="text" id="lname" name="lastName" value="" ngModel><br>
-        <div *ngIf="lname.touched && lname.invalid" class = "alert">Last Name is required</div> 
-
-        <label  class = "labelStyle" for="lname">Email:        </label>
-        <input email class = "inputStyle" required #email="ngModel" type="email" id="email" name="email" value="" ngModel><br>
-        <div *ngIf="email.touched && email.invalid" class = "alert">Email is required</div>
-
-        <input type="submit" [disabled]="fname.invalid || lname.invalid || email.invalid" value="Save">
-      </form> 
+    <div class = "row">
+      <div class = "col-4">
+        <form #studentForm="ngForm" (ngSubmit) = "onSubmit(studentForm)">
+          <br>
+          <div class="mb-3">
+          <label for="fname" class = "form-label" for="fname">First name</label>
+          <input class = "inputStyle form-control"  required #fname="ngModel"   type="text" id="fname" name="firstName" value="" ngModel>
+          <div *ngIf="fname.touched && fname.invalid" class = "alert">First Name is required</div>
+          </div>
+          <label for="lname" class = "form-label" for="lname">Last name</label>
+          <input class = "inputStyle form-control"  required #lname="ngModel" type="text" id="lname" name="lastName" value="" ngModel>
+          <div *ngIf="lname.touched && lname.invalid" class = "alert">Last Name is required</div> 
+  
+          <label for="email" class = "form-label" for="lname">Email</label>
+          <input email class = "inputStyle form-control" required #email="ngModel" type="email" id="email" name="email" value="" ngModel>
+          <div *ngIf="email.touched && email.invalid" class = "alert">Email is required</div>
+  
+          <br>
+          <input class="btn btn-primary" type="submit" [disabled]="fname.invalid || lname.invalid || email.invalid" value="Save">
+        </form>
+      </div>
+      </div>
+     
 </div>
 
 
