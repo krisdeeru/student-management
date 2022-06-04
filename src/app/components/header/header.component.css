@@ -4,3 +4,16 @@ header {
     align-items: center;
     margin-bottom: 10px;
 }
+
+#headerName{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    margin-right: 10px;
+}
+
+#navigation{
+    text-align: center;
+}
