@@ -2,6 +2,12 @@
     padding: 15px;
 }
 
+.alert{
+  color: red;
+  font-size: small;
+  text-align:inherit;
+}
+
 label {
     padding: 10px;
     margin-top: 15px;

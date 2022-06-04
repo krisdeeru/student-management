@@ -1,5 +1,4 @@
 export interface Cources {
-    id?: number;
-    courseName?: String;
-    courseTeacher?: String;
+    studentId?: string;
+    courseId?: string;
 }

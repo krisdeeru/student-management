@@ -1,14 +1,21 @@
 <div class= "studentSaveForm">
     <h3>Add New Student</h3>
-    <form>
+    <form #studentForm="ngForm" (ngSubmit) = "onSubmit(studentForm)">
         <br>
         <label class = "labelStyle" for="fname">First name:</label>
-        <input class = "inputStyle" type="text" id="fname" name="fname" value=""><br>
+        <input class = "inputStyle"  required #fname="ngModel"   type="text" id="fname" name="firstName" value="" ngModel><br>
+        <div *ngIf="fname.touched && fname.invalid" class = "alert">First Name is required</div>
+
         <label class = "labelStyle" for="lname">Last name:</label>
-        <input class = "inputStyle"  type="text" id="lname" name="lname" value=""><br>
+        <input class = "inputStyle"  required #lname="ngModel" type="text" id="lname" name="lastName" value="" ngModel><br>
+        <div *ngIf="lname.touched && lname.invalid" class = "alert">Last Name is required</div> 
+
         <label  class = "labelStyle" for="lname">Email:        </label>
-        <input class = "inputStyle"  type="email" id="email" name="email" value=""><br><br>
-        <input type="submit" value="Save">
+        <input email class = "inputStyle" required #email="ngModel" type="email" id="email" name="email" value="" ngModel><br>
+        <div *ngIf="email.touched && email.invalid" class = "alert">Email is required</div>
+
+        <input type="submit" [disabled]="fname.invalid || lname.invalid || email.invalid" value="Save">
       </form> 
 </div>
+
 

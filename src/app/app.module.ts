@@ -10,6 +10,8 @@ import { StudentComponent } from './components/student/student.component';
 import { SaveStudentComponent } from './components/save-student/save-student.component';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { CoursesComponent } from './components/courses/courses.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

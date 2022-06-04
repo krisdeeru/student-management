@@ -8,11 +8,15 @@
         </tr>        
     </thead>
     <tbody>
-        <tr *ngFor="let student of students"> 
+        <tr *ngFor="let student of students.students"> 
             <td>{{ student.firstName }}</td>
             <td>{{ student.lastName }}</td>
             <td>{{ student.email }}</td>
-            <td><app-button text="update"></app-button><app-button text="delete"></app-button></td>         
+            <td>
+                <button  class = "btn" (click)="onView(student)">View</button>
+                <button class = "btn" (click)="onUpdate(student)">Update</button>
+                <button  class = "btn" (click)="onDelete($event, student.id)">Delete</button>
+            </td>         
         </tr>
     </tbody>
 </table>
